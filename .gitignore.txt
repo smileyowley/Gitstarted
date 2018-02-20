@@ -1,0 +1,31 @@
+# this file should be renamed to .gitignore and placed at the root of your project ignorer for it to work
+# ignore the MAVEN target directory and others that should not be put in the repository. Be sure not to have target as a java package or file name.
+
+# Maven
+target/
+database/
+log/
+
+# Mac
+.DS_Store
+
+# General
+*.class
+*.jar
+*.war
+*.ear
+*.logs
+
+# IntelliJ
+*.iws
+*.iml
+.idea/
+
+# Exlipse
+.eclipse
+.classpath
+.project
+.settings/
+
+# Ref: https://labs.consol.de/development/git/2017/02/22/gitignore.html
+# Ref: http://gary-rowe.com/agilestack/2012/10/12/a-gitignore-file-for-intellij-and-eclipse-with-maven/
