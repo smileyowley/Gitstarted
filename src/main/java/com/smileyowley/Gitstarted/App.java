@@ -9,7 +9,7 @@ import java.util.Scanner;
  * Tools: GIT, MAVEN, ECLIPSE
  * Java concepts: OOP, Project file structure layout, MAVEN Archetype
  ********************************************************************/
-public class App 
+public class App
 {
     public static void main(String[] args)
     {
