@@ -18,7 +18,7 @@ public class App
     	//View arguments being entered
     	seeCommandlineInput(args);
     	//Instantiate App class based in parameters entered at the commandline
-    	//actionCommandlineInput(args);
+    	actionCommandInput(args);
     }
 
     //DATA, define attributes
@@ -42,7 +42,7 @@ public class App
     }
     
     //METHODS used by main() or static debug methods	
-    private static void actionCommandInput ( String args[] )
+    private static void actionCommandInput( String args[] )
     {
     	//no special instantiation yet as don't pass args to it
     	App anApp = new App();
