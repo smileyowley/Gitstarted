@@ -2,9 +2,11 @@
 Here is a list of tasks for this project. To be completed, maybe even move some to the next part.
 
 ##Java
-	1. Write basic code
-	2. Menu
-	3. Play music app
+	1. Add library Log7J2
+	2. Test logging
+	3. Write basic code
+	4. Menu
+	5. Play music app
 
 ##Database
 This part involves creating the database to store users, playlists and their music.
