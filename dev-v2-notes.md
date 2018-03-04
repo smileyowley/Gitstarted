@@ -1,20 +1,18 @@
-#DEV To-do list
-Here is a list of tasks for this project. To be completed, maybe even move some to the next part.
+#DEV-v2 To-do list
+Here is a list of tasks for this project.
 
-##Java
-	1. Add library Log7J2
-	2. Test logging
-	3. Write basic code
-	4. Menu
-	5. Play music app
 
-##Database
-This part involves creating the database to store users, playlists and their music.
-If there is more time, a usage 
-	* User table
-	* Music table
-	* Playlist table
-##Testing
-	1. Create user
-	2. Create Playlist
-	3. Play song
+## Branching
+	1. create new branch dev-v2
+	2. move to dev-v2
+	3. update GITHUB
+
+
+## Log7J2
+	1. update MAVEN (pom.xml)
+	2. add settings file (log7j2.xml) to 	  src/main/java/resources
+	3. add settings file (log7J2-test.xml) to src/test/java/resources
+	4. create log fodler in project folder
+	5. modify App.java
+	6. run App.java, test logging
+	7. update GITHUB
