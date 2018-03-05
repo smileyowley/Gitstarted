@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration xmlns="http://logging.apache.org/log4j/2.0/config">
+
+	<!-- Pattern syntax: "https://logging.apache.org/log4j/2.0/manual/layouts.html#PatternLayout" -->
+    <Appenders>
+        
+        <!-- if append=false, a new log is created removing the old one -->
+        <File name="LOGFILE" fileName="log/logfile.log" append="true">
+            <PatternLayout pattern="[%-5p] | %d{yyyy-MM-dd HH:mm:ss.SSS} | [%t] %C{2} (%F:%L) | %m%n"/>
+        </File>
+        
+        <Console name="STDOUT" target="SYSTEM_OUT">
+            <PatternLayout pattern="[%-5p] | %d{yyyy-MM-dd HH:mm:ss.SSS} | [%t] %C{2} (%F:%L) | %m%n"/>
+        </Console>
+        
+        <!-- Logs ALL messages -->
+        <RollingFile name="ROLLINGLOGFILE-ALL" fileName="log/logging-current.log" filePattern="log/logging-from-%d{yyyy-MM-dd}.log">
+            <PatternLayout pattern="[%-5p] | %d{yyyy-MM-dd HH:mm:ss.SSS} | [%t] %c{2} (%F:%L) | %msg%n" />
+            <Policies>
+                <TimeBasedTriggeringPolicy interval="1" modulate="true" />
+            </Policies>
+        </RollingFile>
+        
+        <!-- Logs INFO type messages -->
+        <RollingFile name="ROLLINGLOGFILE-INFO" fileName="log/infolog-current.log" filePattern="log/infolog-from-%d{yyyy-MM-dd}.log">
+            <PatternLayout pattern="[%-5p] | %d{yyyy-MM-dd HH:mm:ss.SSS} | [%t] %c{2} (%F:%L) | %msg%n" />
+            <Policies>
+                <TimeBasedTriggeringPolicy interval="1" modulate="true" />
+            </Policies>
+        </RollingFile>
+        
+        <!-- Logs ERROR type messages, if this exists we have problems -->
+        <RollingFile name="ROLLINGLOGFILE-ERROR" fileName="log/errorlog-current.log" filePattern="log/errorlog-from-%d{yyyy-MM-dd}.log">
+            <!-- Thread messages includes ref: https://medium.com/@anishekagarwal/log4j2-logging-a-primer-f10ed18e9de6 -->
+            <PatternLayout pattern="[%-5p] | %d{yyyy-MM-dd HH:mm:ss.SSS} | [%t] %c{2} (%F:%L) | [%t] %C - %X | %msg%n" />
+            <Policies>
+                <TimeBasedTriggeringPolicy interval="1" modulate="true" />
+            </Policies>
+        </RollingFile>
+        
+    </Appenders>
+    
+    <!-- 
+    Log4j logger logs all events under its threshold, ALL will log every event, since it's threshold is max value.
+    Level intLevel
+		OFF   0
+		FATAL 100
+		ERROR 200
+		WARN  300
+		INFO  400
+		DEBUG 500
+		TRACE 600
+		ALL   Integer.MAX_VALUE
+     -->
+
+    <Loggers>
+    
+    		<!-- Root is default logger, unless you create a logger for a specific package like com.oreallyoreilly
+    			 
+    			 <Root level="info"> to show all log messages 
+		      Ref: https://logging.apache.org/log4j/2.x/manual/customloglevels.html
+			
+			 <Root level="debug"> if you want to see these messages
+		      otherwise info shows messages only from 0 to 400
+		      use -v on the command line to override this files setting to debug 
+		-->
+		
+		
+        <Root level="error">
+        
+        	<!-- Sent all types of log messages to the console window -->
+            <AppenderRef ref="STDOUT" />
+            
+            <!-- Example of a basic log all appender that writes to the same file all the time -->
+            <!--  This appender definition creates a single file that keeps getting appended to - can get too big, so commented out
+            	<AppenderRef ref="LOGFILE"/>
+            -->
+            
+            <!-- Example of a basic rolling log appender that writes to the a different file each day -->
+            <!-- Each day a new logfile is created and the old one backed up with the previous date appended - logs all levels
+            <AppenderRef ref="ROLLINGLOGFILE"/>
+            -->
+            
+        </Root>
+        
+        <Logger name="com" level="info">
+    		            
+            <!-- Rolling log appenders that write info messages to one log and errors to another -->
+            
+            <!-- Log info level only with a rolling log -->
+            <AppenderRef ref="ROLLINGLOGFILE-INFO" level="info"/>
+            
+            <!-- Log info level only with a rolling log -->
+            <AppenderRef ref="ROLLINGLOGFILE-ERROR" level="error"/>
+            
+    		</Logger>
+    		
+    		<!-- A logger to specifically target the com.smileyowley package so could set logging levels for just it -->
+    
+    		<Logger name="com.smileyowley" level="info">
+    		            
+            <!-- Rolling log appenders that write info messages to one log and errors to another -->
+            
+            <!-- Log info level only with a rolling log -->
+            <AppenderRef ref="ROLLINGLOGFILE-INFO" level="info"/>
+            
+            <!-- Log info level only with a rolling log -->
+            <AppenderRef ref="ROLLINGLOGFILE-ERROR" level="error"/>
+            
+    		</Logger>
+        
+    </Loggers>
+
+</Configuration>
