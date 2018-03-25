@@ -2,29 +2,26 @@ package com.smileyowley.Gitstarted;
 
 import java.util.Date;
 import java.util.Scanner;
-
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-//import org.apache.logging.log4j.log4j-core\2.10.0;
 
 
 /*****************************************************************
  *
  *	Date: March 2018
  *	@author smileyowley
- *	Project: TY Music -> Life skills appreciation day
+ *  Project: TY Music -> Life skills appreciation day
  *	
  *	The purpose of this application is to teach the following:
  * 
- * - Demonstrates the use of development tools : GIT, MAVEN, Eclipse
- * - Demonstrates how to use Eclipse
+ * - Development tools : GIT, MAVEN, Eclipse
  * - Provides a refresher of OOP in Java
  * - Provide an introduction to project file structure layout - MAVEN Archetype
  * - Show how to setup Log4j2
  * 
  *****************************************************************/
 
-public class App 
+public class App
 {
     public static void main( String[] args )
     {
@@ -48,10 +45,10 @@ public class App
 	public App()
 	{		
 		// associate logging with this class so know the messages that came from objects of this class
-		//LOG = LogManager.getLogger(App.class);
+		LOG = LogManager.getLogger(App.class);
 		
 		// test logging
-		//testLogOutput();
+		testLogOutput();
 		
 		this.someInput = new Scanner(System.in);
 		
@@ -88,15 +85,14 @@ public class App
 			// display the command line  entered 
 			for(int i = 0; i < args.length; i++) 
 			{
-	            System.out.println(args[i]);
-	            
+	            System.out.println(args[i]); 
 	        }
 		}
 		 
 	 }//EOM
-	 
+	
 	// test Log4J2 logging
-	/* private static void testLogOutput()
+	private static void testLogOutput()
 	 {
 		LOG.debug("Log test: Test printed on debug");
 	    LOG.info("Log test: Test printed on info");
@@ -106,5 +102,5 @@ public class App
 	
 	    LOG.info("Appending string: {}.", "Application log test message - Hi");
 		 
-	 }//EOM */
+	 }//EOM
 }//EOC
