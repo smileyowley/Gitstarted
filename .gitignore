@@ -21,7 +21,7 @@ log/
 *.iml
 .idea/
 
-# Exlipse
+# Eclipse
 .eclipse
 .classpath
 .project
