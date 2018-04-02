@@ -15,11 +15,11 @@ import joptsimple.OptionException;
 import joptsimple.OptionParser;
 import joptsimple.OptionSet;
 
-/*import java.sql.Connection;
+import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;*/
+import java.sql.Statement;
 
 
 /*****************************************************************
@@ -56,10 +56,10 @@ public class App
 	// Added to every class needing to log with one change, getLogger( ) contains name of the class its in
 	private static Logger LOG;
 	
-/*	private static String VERSION = "0.4";
+	private static String VERSION = "0.4";
 	
 	//SQLite db name + URL, (remove db name hard coding + location, pass in as parameter in next version)
-	private String databaseFile = "jdbc:sqlite:database/oreallyoreilly.db"; */
+	private String databaseFile = "jdbc:sqlite:C://path/database/smileyowley.db";
 	
 	// CONSTRUCTORS.........................................................................................
 	
@@ -74,12 +74,12 @@ public class App
 		LOG.info("Application started with log level debug:" + LOG.isDebugEnabled());
 		
 		//test the logging - uncomment if needed
-		testLogOutput();
+	//	testLogOutput();
 				
 		this.someInput = new Scanner(System.in);
 		
 		//do something here: Display the list of users from the database
-//		showListOfUsers();
+		showListOfUsers();
 		
 		//pause before exit (this is only useful if an error occurs)
         System.out.println(" \n Press enter to exit the program");
@@ -98,7 +98,7 @@ public class App
 	// METHODS used by main() or debug methods (static methods).....................................
 	
 	// write out users in a users table for the database specified
-/*	private void showListOfUsers()
+	private void showListOfUsers()
 	{
 		this.today = new Date();
 		LOG.debug("Getting list of Users from Database as of " + today);
@@ -118,11 +118,9 @@ public class App
           statement.setQueryTimeout(30);  // set timeout to 30 sec.
           
           // Run the query
-          
           ResultSet resultSet = statement.executeQuery("select * from user");
           
           // iterate through the results create User objects put in the ListArray
-          
           while(resultSet.next())
           {
               LOG.debug( "User found: " + resultSet.getString("userName") );
@@ -149,7 +147,7 @@ public class App
           }
         }
 		
-	}//EOM */
+	}//EOM
 	
 	/**
 	 * action the arguments presented at the command line
