@@ -6,5 +6,5 @@ CREATE TABLE User
 	userRole		varchar(20)		not null,
 	userToken		varchar(100)	not null,
 	userStatus		integer			not null,
-	userLastUpdate	text not null
+	userLastUpdate	text 			not null
 );

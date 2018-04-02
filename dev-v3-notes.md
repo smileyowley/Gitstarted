@@ -3,16 +3,15 @@ Here is a list of tasks for this project.
 
 
 ## Branching
-	1. create new branch dev-v2
-	2. move to dev-v2
-	3. update GITHUB
+1. create new branch dev-v3
+2. move to dev-v3
+3. update GITHUB
 
 
-## Log7J2
-	1. update MAVEN (pom.xml)
-	2. add settings file (log7j2.xml) to 	  src/main/java/resources
-	3. add settings file (log7J2-test.xml) to src/test/java/resources
-	4. create log fodler in project folder
-	5. modify App.java
-	6. run App.java, test logging
-	7. update GITHUB
+## JOpt
+1. update MAVEN (pom.xml)
+2. update **App.class**
+3. update + run **run.bat**
+4. run App.java
+5. create package
+6. update branch + GITHUB
