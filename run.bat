@@ -8,9 +8,9 @@ REM IF JAVA_HOME is set you do not need to specify the path just java
 REM ***********************************************
 
 START "C:\Program Files\Java\jdk1.8.0_162\bin\java.exe" java -cp target/Gitstarted-v1.jar com.smileyowley.Gitstarted.App
-START "C:\Program Files\Java\jdk1.8.0_162\bin\java.exe" java -cp target/Gitstarted-v1.jar com.smileyowley.Gitstarted.App -v
-START "C:\Program Files\Java\jdk1.8.0_162\bin\java.exe" java -cp target/Gitstarted-v1.jar com.smileyowley.Gitstarted.App -help
-START "C:\Program Files\Java\jdk1.8.0_162\bin\java.exe" java -cp target/Gitstarted-v1.jar com.smileyowley.Gitstarted.App -version
+REM "C:\Program Files\Java\jdk1.8.0_162\bin\java.exe" java -cp target/Gitstarted-v1.jar com.smileyowley.Gitstarted.App -v
+REM "C:\Program Files\Java\jdk1.8.0_162\bin\java.exe" java -cp target/Gitstarted-v1.jar com.smileyowley.Gitstarted.App -help
+REM "C:\Program Files\Java\jdk1.8.0_162\bin\java.exe" java -cp target/Gitstarted-v1.jar com.smileyowley.Gitstarted.App -version
 
-echo "Press ENTER to close window..."
-PAUSE
+REM echo "Press ENTER to close window..."
+REM PAUSE

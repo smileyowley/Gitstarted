@@ -24,11 +24,10 @@ import java.sql.Statement;
 
 /*****************************************************************
  *
- *	Date: 2017
- *	@author COR
+ *	Date: 2018
+ *	@author smileyowley
  *
- * 
- * The purpose of this application is to provide an example for the following:
+ * 	The purpose of this application is to provide an example for the following:
  * 
  * - Demonstrates the use of development tools : GIT, MAVEN, Eclipse
  * - Demonstrates how to use Eclipse
